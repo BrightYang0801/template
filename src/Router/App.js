@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Redirect, Route, } from 'react-router-
 import { LocaleProvider } from 'antd';
 import intl from "react-intl-universal";
 import IntlPolyfill from "intl";
-
+import PrivateRoute from './PrivateRoute'
 import LoadableComponent from '../components/common/LoadableComponent'
 
 
@@ -67,7 +67,7 @@ export default class App extends Component {
             <LocaleProvider locale={locale}>
                 <Router>
                     <Switch>
-                        <Route path="/home" component={Home} />
+                        <PrivateRoute path="/home" component={Home} />
                         <Redirect from='/*' to='/home' />
                     </Switch>
                 </Router>

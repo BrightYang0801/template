@@ -17,18 +17,10 @@ class PrivateRoute extends Component {
     }
 
     async componentDidMount() {
-        if (localStorage.getItem('isLogin') === "true") {
-            this.setState({
-                show: true,
-                isLogin: true
-            })
-        } else {
-            this.setState({
-                show: true,
-                isLogin: false
-            })
-            localStorage.setItem('isLogin', false)
-        }
+        this.setState({
+            show: true,
+            isLogin: true
+        })
     }
 
     componentWillUnmount() {
