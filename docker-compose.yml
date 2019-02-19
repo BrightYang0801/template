@@ -1,0 +1,11 @@
+version: "2"
+services:
+    web:
+        build: .
+        image: data-governance-ui
+        container_name: data-governance-ui
+        restart: always
+        volumes:
+            - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+        ports:
+            - "8081:80"
